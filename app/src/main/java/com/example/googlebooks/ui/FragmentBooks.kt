@@ -1,9 +1,14 @@
 package com.example.googlebooks.ui
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.INVISIBLE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.googlebooks.R
@@ -13,6 +18,7 @@ import org.kodein.di.KodeinAware
 import org.kodein.di.KodeinTrigger
 import org.kodein.di.android.x.closestKodein
 import org.kodein.di.generic.kcontext
+
 
 class FragmentBooks : Fragment(R.layout.fragment_books), KodeinAware {
 
@@ -41,7 +47,16 @@ class FragmentBooks : Fragment(R.layout.fragment_books), KodeinAware {
         super.onViewCreated(view, savedInstanceState)
 
         binding.imgMenu.setOnClickListener {
-            findNavController().navigate(R.id.action_fragmentBooks_to_fragmentSettings,null)
+            findNavController().navigate(R.id.action_fragmentBooks_to_fragmentSettings, null)
+        }
+
+        binding.etSearch.doOnTextChanged { text, _, _, _ ->
+            binding.imgClose.visibility = if (text!!.isNotEmpty())
+                VISIBLE else INVISIBLE
+        }
+
+        binding.imgClose.setOnClickListener {
+            binding.etSearch.setText("")
         }
     }
 

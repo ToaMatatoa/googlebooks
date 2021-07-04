@@ -7,4 +7,5 @@
     <string name="search_by_title">По названиюу</string>
     <string name="search_by_genre">По жанру</string>
     <string name="search_by_publisher">По издателю</string>
+    <string name="search">Поиск</string>
 </resources>

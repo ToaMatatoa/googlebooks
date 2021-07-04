@@ -10,24 +10,65 @@
         android:layout_height="wrap_content"
         android:background="@color/design_default_color_primary"
         android:elevation="4dp"
-        android:paddingTop="36dp"
-        android:paddingBottom="12dp"
+        android:paddingTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="4dp">
+
+            <ImageView
+                android:id="@+id/img_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:src="@drawable/ic_search"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/light_gray"
+                android:hint="@string/search"
+                android:lines="1"
+                android:maxLines="1"
+                android:paddingStart="60dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="40dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toStartOf="@id/img_menu"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:visibility="invisible"
+                android:src="@drawable/ic_close"
+                app:layout_constraintEnd_toEndOf="@id/et_search"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/img_menu"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:layout_gravity="end"
-                android:src="@drawable/ic_settings" />
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_settings"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.appcompat.widget.Toolbar>
 
