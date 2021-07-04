@@ -2,6 +2,7 @@
   <dictionary name="dmitr">
     <words>
       <w>kodein</w>
+      <w>okhttp</w>
     </words>
   </dictionary>
 </component>

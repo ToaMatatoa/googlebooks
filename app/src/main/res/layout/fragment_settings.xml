@@ -1,6 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/design_default_color_primary"
+        android:elevation="4dp"
+        android:paddingTop="36dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/tv_settings_toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginStart="24dp"
+                android:text="@string/search_parameters"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/tv_settings_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/parameters_for_searching_books"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_settings" />
+
+    <TextView
+        android:id="@+id/tv_search_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/tv_settings_shape"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingVertical="8dp"
+        android:text="@string/search_all_books"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_settings_title" />
+
+    <ImageView
+        android:id="@+id/iv_check_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="false"
+        android:src="@drawable/ic_check"
+        app:layout_constraintEnd_toEndOf="@id/tv_search_all"
+        app:layout_constraintTop_toTopOf="@id/tv_search_all" />
+
+    <TextView
+        android:id="@+id/tv_search_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/tv_settings_shape"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingVertical="8dp"
+        android:text="@string/search_by_author"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_search_all" />
+
+    <ImageView
+        android:id="@+id/iv_check_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="false"
+        android:src="@drawable/ic_check"
+        app:layout_constraintEnd_toEndOf="@id/tv_search_author"
+        app:layout_constraintTop_toTopOf="@id/tv_search_author" />
+
+    <TextView
+        android:id="@+id/tv_search_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/tv_settings_shape"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingVertical="8dp"
+        android:text="@string/search_by_title"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_search_author" />
+
+    <ImageView
+        android:id="@+id/iv_check_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="false"
+        android:src="@drawable/ic_check"
+        app:layout_constraintEnd_toEndOf="@id/tv_search_title"
+        app:layout_constraintTop_toTopOf="@id/tv_search_title" />
+
+    <TextView
+        android:id="@+id/tv_search_genre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/tv_settings_shape"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingVertical="8dp"
+        android:text="@string/search_by_genre"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_search_title" />
+
+    <ImageView
+        android:id="@+id/iv_check_genre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="false"
+        android:src="@drawable/ic_check"
+        app:layout_constraintEnd_toEndOf="@id/tv_search_genre"
+        app:layout_constraintTop_toTopOf="@id/tv_search_genre" />
+
+    <TextView
+        android:id="@+id/tv_search_publisher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/tv_settings_shape"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingVertical="8dp"
+        android:text="@string/search_by_publisher"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_search_genre" />
+
+    <ImageView
+        android:id="@+id/iv_check_publisher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="false"
+        android:src="@drawable/ic_check"
+        app:layout_constraintEnd_toEndOf="@id/tv_search_publisher"
+        app:layout_constraintTop_toTopOf="@id/tv_search_publisher" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

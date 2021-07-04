@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.googlebooks.R
 import com.example.googlebooks.databinding.FragmentBooksBinding
 import org.kodein.di.Kodein
@@ -34,6 +35,14 @@ class FragmentBooks : Fragment(R.layout.fragment_books), KodeinAware {
 
         _binding = FragmentBooksBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.imgMenu.setOnClickListener {
+            findNavController().navigate(R.id.action_fragmentBooks_to_fragmentSettings,null)
+        }
     }
 
     override fun onDestroyView() {
