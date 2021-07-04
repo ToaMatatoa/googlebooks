@@ -17,6 +17,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -46,4 +50,13 @@ dependencies {
     //kodein_di
     implementation 'org.kodein.di:kodein-di-generic-jvm:6.5.5'
     implementation "org.kodein.di:kodein-di-framework-android-x:6.5.5"
+
+    //navigation
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:2.3.5")
+    androidTestImplementation("androidx.navigation:navigation-testing:2.3.5")
+    implementation("androidx.navigation:navigation-compose:2.4.0-alpha04")
 }
