@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.googlebooks.databinding.ActivityMainBinding
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
@@ -36,8 +35,6 @@ class MainActivity : AppCompatActivity(), KodeinAware {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.findNavController()
 
-        setSupportActionBar(binding.toolbar)
-        setupActionBarWithNavController(navController)
     }
 
     override fun onSupportNavigateUp(): Boolean {
