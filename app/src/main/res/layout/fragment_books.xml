@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/design_default_color_primary"
-        android:elevation="4dp"
-        android:paddingTop="32dp"
+        android:elevation="@dimen/elevation_4"
+        android:paddingTop="@dimen/padding_32"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -19,32 +19,32 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:paddingTop="4dp">
+            android:paddingTop="@dimen/padding_4">
 
             <ImageView
                 android:id="@+id/img_search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="4dp"
+                android:paddingTop="@dimen/padding_4"
                 android:src="@drawable/ic_search"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/et_search"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/zero_width"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="@dimen/margin_size_16"
                 android:backgroundTint="@color/light_gray"
                 android:hint="@string/search"
                 android:lines="1"
                 android:maxLines="1"
-                android:paddingStart="60dp"
-                android:paddingTop="4dp"
-                android:paddingEnd="40dp"
+                android:paddingStart="@dimen/padding_60"
+                android:paddingTop="@dimen/padding_4"
+                android:paddingEnd="@dimen/padding_40"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
-                android:textSize="24sp"
+                android:textSize="@dimen/text_size_24"
                 app:layout_constraintEnd_toStartOf="@id/img_menu"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -53,7 +53,7 @@
                 android:id="@+id/img_close"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="4dp"
+                android:paddingTop="@dimen/padding_4"
                 android:src="@drawable/ic_close"
                 android:visibility="invisible"
                 app:layout_constraintEnd_toEndOf="@id/et_search"
@@ -61,10 +61,10 @@
 
             <ImageView
                 android:id="@+id/img_menu"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="16dp"
+                android:layout_width="@dimen/width_36"
+                android:layout_height="@dimen/height_36"
+                android:layout_marginTop="@dimen/margin_size_4"
+                android:layout_marginEnd="@dimen/margin_size_16"
                 android:src="@drawable/ic_tune_black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -82,15 +82,15 @@
         android:gravity="center"
         android:text="@string/Right_book_always_will_be_find"
         android:textColor="@color/light_gray"
-        android:textSize="20sp"
+        android:textSize="@dimen/text_size_20"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar_books" />
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nsv_settings"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="@dimen/zero_height"
+        android:layout_marginTop="@dimen/margin_size_8"
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

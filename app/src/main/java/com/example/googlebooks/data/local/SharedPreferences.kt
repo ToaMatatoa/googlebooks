@@ -3,10 +3,10 @@ package com.example.googlebooks.data.local
 import android.content.SharedPreferences
 import com.example.googlebooks.Constants
 
-class SharedPreferences( private val prefs: SharedPreferences) {
+class SharedPreferences(private val prefs: SharedPreferences) {
 
     fun saveSelectedFilter(filter: String) {
-        prefs.edit().putString(SETTING_PREF_KEY, filter).commit()
+        prefs.edit().putString(SETTING_PREF_KEY, filter).apply()
     }
 
     fun getSelectedFilter(): String {

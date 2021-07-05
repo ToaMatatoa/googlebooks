@@ -10,9 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/design_default_color_primary"
-        android:elevation="4dp"
-        android:paddingTop="36dp"
-        android:paddingBottom="12dp"
+        android:elevation="@dimen/elevation_4"
+        android:paddingTop="@dimen/padding_36"
+        android:paddingBottom="@dimen/padding_12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -22,18 +22,18 @@
 
             <ImageView
                 android:id="@+id/img_back"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="@dimen/width_36"
+                android:layout_height="@dimen/height_36"
                 android:src="@drawable/ic_back" />
 
             <TextView
                 android:id="@+id/tv_settings_toolbar_title"
                 android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:layout_marginStart="24dp"
+                android:layout_height="@dimen/height_36"
+                android:layout_marginStart="@dimen/margin_size_24"
                 android:text="@string/search_parameters"
                 android:textColor="@color/white"
-                android:textSize="24sp" />
+                android:textSize="@dimen/text_size_24" />
 
         </LinearLayout>
 
@@ -43,19 +43,19 @@
         android:id="@+id/tv_settings_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="@dimen/margin_size_16"
+        android:layout_marginTop="@dimen/margin_size_24"
         android:text="@string/parameters_for_searching_books"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_size_18"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar_settings" />
 
     <ScrollView
         android:id="@+id/nsv_settings"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero_width"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_size_8"
         android:fillViewport="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,15 +72,15 @@
                 android:id="@+id/tv_search_all"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginStart="@dimen/margin_size_16"
+                android:layout_marginTop="@dimen/margin_size_12"
                 android:background="@drawable/tv_settings_shape"
                 android:clickable="true"
                 android:focusable="true"
-                android:paddingVertical="8dp"
+                android:paddingVertical="@dimen/padding_8"
                 android:text="@string/search_all_books"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="@dimen/text_size_18"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/cl_settings" />
 
@@ -88,14 +88,14 @@
                 android:id="@+id/tv_search_author"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="@dimen/margin_size_16"
                 android:background="@drawable/tv_settings_shape"
                 android:clickable="true"
                 android:focusable="true"
-                android:paddingVertical="8dp"
+                android:paddingVertical="@dimen/padding_8"
                 android:text="@string/search_by_author"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="@dimen/text_size_18"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_search_all" />
 
@@ -103,14 +103,14 @@
                 android:id="@+id/tv_search_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="@dimen/margin_size_16"
                 android:background="@drawable/tv_settings_shape"
                 android:clickable="true"
                 android:focusable="true"
-                android:paddingVertical="8dp"
+                android:paddingVertical="@dimen/padding_8"
                 android:text="@string/search_by_title"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="@dimen/text_size_18"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_search_author" />
 
@@ -118,14 +118,14 @@
                 android:id="@+id/tv_search_genre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="@dimen/margin_size_16"
                 android:background="@drawable/tv_settings_shape"
                 android:clickable="true"
                 android:focusable="true"
-                android:paddingVertical="8dp"
+                android:paddingVertical="@dimen/padding_8"
                 android:text="@string/search_by_genre"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="@dimen/text_size_18"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_search_title" />
 
@@ -133,14 +133,14 @@
                 android:id="@+id/tv_search_publisher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="@dimen/margin_size_16"
                 android:background="@drawable/tv_settings_shape"
                 android:clickable="true"
                 android:focusable="true"
-                android:paddingVertical="8dp"
+                android:paddingVertical="@dimen/padding_8"
                 android:text="@string/search_by_publisher"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="@dimen/text_size_18"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_search_genre" />
 
