@@ -8,6 +8,7 @@ import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.googlebooks.R
@@ -31,7 +32,7 @@ class FragmentBooks : Fragment(R.layout.fragment_books), KodeinAware {
     private var _binding: FragmentBooksBinding? = null
     private val binding get() = _binding!!
 
-    private var adapterRV = Adapter()
+    private var bookAdapter: BookAdapter? = null
     private val viewModel: ViewModel by instance()
 
     override fun onCreateView(
@@ -48,22 +49,23 @@ class FragmentBooks : Fragment(R.layout.fragment_books), KodeinAware {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        bookAdapter = BookAdapter()
+
         binding.imgMenu.setOnClickListener {
             findNavController().navigate(R.id.action_fragmentBooks_to_fragmentSettings, null)
         }
 
-//        viewModel.getBooks()
-//        viewModel.liveDataRemoteProvider.observe(viewLifecycleOwner, Observer {
-//            adapterRV.addBooks(it)
-//        })
+        viewModel.liveDataRemoteProvider.observe(viewLifecycleOwner, Observer {
+            bookAdapter?.addBooks(it)
+        })
 
         binding.rvList.apply {
             layoutManager = LinearLayoutManager(context)
-            binding.rvList.adapter = adapterRV
+            binding.rvList.adapter = bookAdapter
         }
 
-
         binding.etSearch.doOnTextChanged { text, _, _, _ ->
+            viewModel.getBooks(text.toString())
             binding.imgClose.visibility = if (text!!.isNotEmpty())
                 VISIBLE else INVISIBLE
         }
