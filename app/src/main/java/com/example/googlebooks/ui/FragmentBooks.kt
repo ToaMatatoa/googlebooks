@@ -6,10 +6,12 @@ import android.view.View
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.googlebooks.R
 import com.example.googlebooks.databinding.FragmentBooksBinding
@@ -19,6 +21,7 @@ import org.kodein.di.KodeinTrigger
 import org.kodein.di.android.x.closestKodein
 import org.kodein.di.generic.instance
 import org.kodein.di.generic.kcontext
+
 
 class FragmentBooks : Fragment(R.layout.fragment_books), KodeinAware {
 
@@ -75,6 +78,15 @@ class FragmentBooks : Fragment(R.layout.fragment_books), KodeinAware {
         binding.imgClose.setOnClickListener {
             binding.etSearch.setText("")
         }
+
+        binding.rvList.addItemDecoration(
+            DividerItemDecoration(
+                context,
+                DividerItemDecoration.VERTICAL
+            )
+        )
+        val itemDecorator = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
+        itemDecorator.setDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.divider)!!)
     }
 
     override fun onDestroyView() {
