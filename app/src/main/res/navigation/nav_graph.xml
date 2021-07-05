@@ -10,7 +10,9 @@
         android:label="Books">
         <action
             android:id="@+id/action_fragmentBooks_to_fragmentSettings"
-            app:destination="@id/fragmentSettings" />
+            app:destination="@id/fragmentSettings"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/fragmentSettings"
@@ -18,6 +20,8 @@
         android:label="Settings" >
         <action
             android:id="@+id/action_fragmentSettings_to_fragmentBooks"
-            app:destination="@id/fragmentBooks" />
+            app:destination="@id/fragmentBooks"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
 </navigation>
