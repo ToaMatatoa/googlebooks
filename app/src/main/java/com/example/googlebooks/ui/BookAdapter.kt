@@ -7,14 +7,14 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.googlebooks.R
-import com.example.googlebooks.data.remote.model.ResponseBooks
+import com.example.googlebooks.data.remote.model.ResponseBooks.Book
 import com.example.googlebooks.databinding.RvItemBinding
 
-class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
+class BookAdapter : RecyclerView.Adapter<BookAdapter.ViewHolder>() {
 
-    private val items = mutableListOf<ResponseBooks.Items>()
+    private val items = mutableListOf<Book>()
 
-    fun addBooks(booksItems: List<ResponseBooks.Items>) {
+    fun addBooks(booksItems: List<Book>) {
         items.clear()
         items.addAll(booksItems)
         notifyDataSetChanged()
@@ -26,7 +26,7 @@ class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val paymentBean: ResponseBooks.Items = items[position]
+        val paymentBean: Book = items[position]
         holder.bind(paymentBean)
     }
 
@@ -35,19 +35,15 @@ class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
     class ViewHolder(private var itemBinding: RvItemBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
 
-        fun bind(item: ResponseBooks.Items) =
+        fun bind(item: Book) =
             with(itemView) {
                 Glide.with(this)
-                    .asBitmap()
-                    .load(item.volumeInfo.imageLinks.thumbnail)
-                    .transform(CenterCrop(), RoundedCorners(20))
-                    .error(R.drawable.img_placeholder)
-                    .override(400)
+                    .load(item.volumeInfo.imageLinks?.thumbnail)
+                    .placeholder(R.drawable.img_placeholder)
                     .into(itemBinding.ivBookImage)
 
-                itemBinding.tvBookTitle.text = item.volumeInfo.title
-                itemBinding.tvBookAuthor.text = item.volumeInfo.authors.toString()
-
+                itemBinding.tvBookTitle.text = item.volumeInfo.title ?: ""
+                itemBinding.tvBookAuthor.text = item.volumeInfo.authors?.toString()
             }
     }
 }
