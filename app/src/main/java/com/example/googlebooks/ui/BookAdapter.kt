@@ -38,6 +38,7 @@ class BookAdapter : RecyclerView.Adapter<BookAdapter.ViewHolder>() {
                 Glide.with(this)
                     .load(item.volumeInfo.imageLinks?.thumbnail)
                     .placeholder(R.drawable.img_placeholder)
+                    .dontAnimate()
                     .into(itemBinding.ivBookImage)
 
                 itemBinding.tvBookTitle.text = item.volumeInfo.title ?: ""

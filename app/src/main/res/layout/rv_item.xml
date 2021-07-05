@@ -4,15 +4,15 @@
     xmlns:tool="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingHorizontal="16dp"
-    android:paddingBottom="8dp"
-    android:layout_marginTop="8dp">
+    android:layout_marginTop="@dimen/margin_size_8"
+    android:paddingHorizontal="@dimen/padding_16"
+    android:paddingBottom="@dimen/padding_8">
 
     <ImageView
         android:id="@+id/iv_book_image"
-        android:layout_width="140dp"
-        android:layout_height="190dp"
-        android:layout_marginBottom="4dp"
+        android:layout_width="@dimen/width_140"
+        android:layout_height="@dimen/height_190"
+        android:layout_marginBottom="@dimen/margin_size_4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,8 +20,8 @@
         android:id="@+id/tv_book_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textSize="20sp"
+        android:layout_marginStart="@dimen/margin_size_8"
+        android:textSize="@dimen/text_size_20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/iv_book_image"
         app:layout_constraintTop_toTopOf="parent"
@@ -29,10 +29,10 @@
 
     <TextView
         android:id="@+id/tv_book_author"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero_width"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textSize="20sp"
+        android:layout_marginStart="@dimen/margin_size_8"
+        android:textSize="@dimen/text_size_20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/iv_book_image"
         app:layout_constraintTop_toBottomOf="@id/tv_book_title"
