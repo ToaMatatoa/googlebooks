@@ -4,13 +4,11 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.googlebooks.data.model.ResponseBooks
+import com.example.googlebooks.data.remote.model.ResponseBooks
 import com.example.googlebooks.domain.UseCase
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import org.kodein.di.Kodein
-import org.kodein.di.KodeinAware
 
 class ViewModel(private val useCase: UseCase) : ViewModel() {
 
@@ -30,5 +28,9 @@ class ViewModel(private val useCase: UseCase) : ViewModel() {
                     Log.getStackTraceString(it)
                 })
         )
+    }
+
+    fun saveBooksSetting(setting: String) {
+        useCase.saveBooksSetting(setting)
     }
 }

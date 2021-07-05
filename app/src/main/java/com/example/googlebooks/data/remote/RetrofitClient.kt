@@ -1,4 +1,4 @@
-package com.example.googlebooks.data
+package com.example.googlebooks.data.remote
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

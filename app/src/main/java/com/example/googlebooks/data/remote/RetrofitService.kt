@@ -1,6 +1,6 @@
-package com.example.googlebooks.data
+package com.example.googlebooks.data.remote
 
-import com.example.googlebooks.data.model.ResponseBooks
+import com.example.googlebooks.data.remote.model.ResponseBooks
 import io.reactivex.Single
 import retrofit2.http.GET
 

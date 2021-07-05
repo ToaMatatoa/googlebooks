@@ -13,6 +13,6 @@ class SharedPreferences( private val prefs: SharedPreferences) {
     }
 
     companion object {
-        private const val SETTING_PREF_KEY = "BIRTHDAY_PREF_KEY"
+        private const val SETTING_PREF_KEY = "SETTING_PREF_KEY"
     }
 }

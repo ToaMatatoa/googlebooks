@@ -1,4 +1,4 @@
-package com.example.googlebooks.data.model
+package com.example.googlebooks.data.remote.model
 
 import com.google.gson.annotations.SerializedName
 
