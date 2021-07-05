@@ -65,13 +65,26 @@
                 android:layout_height="36dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="16dp"
-                android:src="@drawable/ic_settings"
+                android:src="@drawable/ic_tune_black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/iv_no_books_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_size_64"
+        android:layout_marginTop="@dimen/margin_size_64"
+        android:gravity="center"
+        android:text="@string/Right_book_always_will_be_find"
+        android:textColor="@color/light_gray"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_books" />
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nsv_settings"

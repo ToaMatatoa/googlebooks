@@ -1,15 +1,11 @@
 package com.example.googlebooks.ui
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.googlebooks.Constants
 import com.example.googlebooks.Constants.CHECK_ALL
 import com.example.googlebooks.Constants.CHECK_BY_AUTHOR
 import com.example.googlebooks.Constants.CHECK_BY_GENRE
@@ -17,7 +13,6 @@ import com.example.googlebooks.Constants.CHECK_BY_PUBLISHER
 import com.example.googlebooks.Constants.CHECK_BY_TITLE
 import com.example.googlebooks.R
 import com.example.googlebooks.databinding.FragmentSettingsBinding
-import org.kodein.di.Constant
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.KodeinTrigger

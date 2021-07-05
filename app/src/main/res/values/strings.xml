@@ -8,4 +8,5 @@
     <string name="search_by_genre">По жанру</string>
     <string name="search_by_publisher">По издателю</string>
     <string name="search">Поиск</string>
+    <string name="Right_book_always_will_be_find">Нужная книга всегда найдется</string>
 </resources>

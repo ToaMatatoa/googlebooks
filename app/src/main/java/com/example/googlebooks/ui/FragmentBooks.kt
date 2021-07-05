@@ -55,8 +55,10 @@ class FragmentBooks : Fragment(R.layout.fragment_books), KodeinAware {
             findNavController().navigate(R.id.action_fragmentBooks_to_fragmentSettings, null)
         }
 
-        viewModel.liveDataRemoteProvider.observe(viewLifecycleOwner, Observer {
-            bookAdapter?.addBooks(it)
+        viewModel.liveDataRemoteProvider.observe(viewLifecycleOwner, Observer { books ->
+            bookAdapter?.addBooks(books)
+            binding.ivNoBooksPlaceholder.visibility = if (books.isNotEmpty())
+                INVISIBLE else VISIBLE
         })
 
         binding.rvList.apply {
