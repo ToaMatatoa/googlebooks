@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.googlebooks.R
-import com.example.googlebooks.data.model.ResponseBooks
+import com.example.googlebooks.data.remote.model.ResponseBooks
 import com.example.googlebooks.databinding.RvItemBinding
 
 class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
@@ -15,6 +15,7 @@ class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
     private val items = mutableListOf<ResponseBooks.Items>()
 
     fun addBooks(booksItems: List<ResponseBooks.Items>) {
+        items.clear()
         items.addAll(booksItems)
         notifyDataSetChanged()
     }

@@ -1,7 +1,9 @@
 package com.example.googlebooks.di
 
-import com.example.googlebooks.data.RemoteDataStore
-import com.example.googlebooks.data.RetrofitService
+import com.example.googlebooks.data.local.LocalDataStore
+import com.example.googlebooks.data.local.SharedPreferences
+import com.example.googlebooks.data.remote.RemoteDataStore
+import com.example.googlebooks.data.remote.RetrofitService
 import com.example.googlebooks.domain.Repository
 import com.example.googlebooks.domain.UseCase
 import org.kodein.di.Kodein
@@ -23,9 +25,20 @@ object DataModule {
 
         bind<Repository>() with singleton {
             Repository(
-                remoteDataStore = instance()
+                remoteDataStore = instance(),
+                localDataStore = instance()
             )
         }
+
+        //Local
+        bind() from singleton { SharedPreferences(prefs = instance()) }
+
+        bind<LocalDataStore>() with singleton {
+            LocalDataStore(
+                sharedPreferences = instance()
+            )
+        }
+
 
         //UseCase
         bind<UseCase>() with singleton {
