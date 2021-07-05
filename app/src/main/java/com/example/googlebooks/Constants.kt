@@ -1,7 +1,5 @@
 package com.example.googlebooks
 
-import android.view.View
-
 object Constants {
 
     const val CHECK_ALL = "terms"

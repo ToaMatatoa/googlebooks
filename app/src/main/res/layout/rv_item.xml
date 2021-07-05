@@ -12,31 +12,29 @@
         android:layout_width="140dp"
         android:layout_height="190dp"
         android:layout_marginBottom="4dp"
-        android:src="@drawable/img_placeholder"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tool:src="@drawable/img_placeholder" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_book_title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:maxLines="3"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/iv_book_image"
         app:layout_constraintTop_toTopOf="parent"
-        tool:text="Gfsklfmsfklefkl" />
+        tool:text="Taya Ok Ok Ok Ok Ok Ok OkOk Ok" />
 
     <TextView
         android:id="@+id/tv_book_author"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:maxLines="2"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/iv_book_image"
         app:layout_constraintTop_toBottomOf="@id/tv_book_title"
-        tool:text="fsfsfsafqwfqwfwqfwqfqwf" />
+        tool:text="Ok Taya Taya Ok Ok Ok Ok Ok Ok OkOk Ok" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

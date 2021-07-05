@@ -8,5 +8,4 @@
     <string name="search_by_genre">По жанру</string>
     <string name="search_by_publisher">По издателю</string>
     <string name="search">Поиск</string>
-    <string name="preference_file_key">BOOK_SETTING</string>
 </resources>
