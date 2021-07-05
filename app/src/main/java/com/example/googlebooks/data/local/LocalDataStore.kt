@@ -2,11 +2,11 @@ package com.example.googlebooks.data.local
 
 class LocalDataStore(private val sharedPreferences: SharedPreferences) {
 
-    fun saveBooksSetting(setting: String) {
-            sharedPreferences.saveBooksSetting(setting)
+    fun saveSelectedFilter(filter: String) {
+            sharedPreferences.saveSelectedFilter(filter)
     }
 
-    fun getBooksSetting(): String {
-        return sharedPreferences.getBooksSetting()
+    fun getSelectedFilter(): String {
+        return sharedPreferences.getSelectedFilter()
     }
 }

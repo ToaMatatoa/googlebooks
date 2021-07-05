@@ -1,15 +1,16 @@
 package com.example.googlebooks.data.local
 
 import android.content.SharedPreferences
+import com.example.googlebooks.Constants
 
 class SharedPreferences( private val prefs: SharedPreferences) {
 
-    fun saveBooksSetting(setting: String) {
-        prefs.edit().putString(SETTING_PREF_KEY, setting).apply()
+    fun saveSelectedFilter(filter: String) {
+        prefs.edit().putString(SETTING_PREF_KEY, filter).commit()
     }
 
-    fun getBooksSetting(): String {
-        return prefs.getString(SETTING_PREF_KEY, null) ?: "terms"
+    fun getSelectedFilter(): String {
+        return prefs.getString(SETTING_PREF_KEY, Constants.CHECK_ALL) ?: Constants.CHECK_ALL
     }
 
     companion object {
