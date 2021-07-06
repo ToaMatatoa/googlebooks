@@ -62,26 +62,31 @@ class FragmentSettings : Fragment(), KodeinAware {
         binding.tvSearchAll.setOnClickListener {
             setSelectedFilter(CHECK_ALL)
             if (binding.rbSearchAll.isChecked) viewModel.saveBooksSetting(CHECK_ALL)
+            findNavController().navigate(R.id.action_fragmentSettings_to_fragmentBooks, null)
         }
 
         binding.tvSearchAuthor.setOnClickListener {
             setSelectedFilter(CHECK_BY_AUTHOR)
             if (binding.rbSearchAuthor.isChecked) viewModel.saveBooksSetting(CHECK_BY_AUTHOR)
+            findNavController().navigate(R.id.action_fragmentSettings_to_fragmentBooks, null)
         }
 
         binding.tvSearchTitle.setOnClickListener {
             setSelectedFilter(CHECK_BY_TITLE)
             if (binding.rbSearchTitle.isChecked) viewModel.saveBooksSetting(CHECK_BY_TITLE)
+            findNavController().navigate(R.id.action_fragmentSettings_to_fragmentBooks, null)
         }
 
         binding.tvSearchGenre.setOnClickListener {
             setSelectedFilter(CHECK_BY_GENRE)
             if (binding.rbSearchGenre.isChecked) viewModel.saveBooksSetting(CHECK_BY_GENRE)
+            findNavController().navigate(R.id.action_fragmentSettings_to_fragmentBooks, null)
         }
 
         binding.tvSearchPublisher.setOnClickListener {
             setSelectedFilter(CHECK_BY_PUBLISHER)
             if (binding.rbSearchPublisher.isChecked) viewModel.saveBooksSetting(CHECK_BY_PUBLISHER)
+            findNavController().navigate(R.id.action_fragmentSettings_to_fragmentBooks, null)
         }
     }
 
