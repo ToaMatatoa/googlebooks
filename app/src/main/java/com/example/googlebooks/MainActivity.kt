@@ -6,11 +6,13 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.googlebooks.databinding.ActivityMainBinding
+import com.example.googlebooks.ui.ViewModel
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.KodeinTrigger
 import org.kodein.di.android.closestKodein
 import org.kodein.di.android.retainedKodein
+import org.kodein.di.generic.instance
 
 
 class MainActivity : AppCompatActivity(), KodeinAware {
@@ -25,6 +27,8 @@ class MainActivity : AppCompatActivity(), KodeinAware {
 
     private lateinit var binding: ActivityMainBinding
 
+    private val viewModel: ViewModel by instance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         kodeinTrigger.trigger()
@@ -36,6 +40,8 @@ class MainActivity : AppCompatActivity(), KodeinAware {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.findNavController()
+
+        viewModel.saveBooksSetting(Constants.CHECK_ALL)
     }
 
     override fun onSupportNavigateUp(): Boolean {

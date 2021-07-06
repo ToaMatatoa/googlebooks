@@ -34,11 +34,6 @@ class FragmentSettings : Fragment(), KodeinAware {
 
     private val viewModel: ViewModel by instance()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        kodeinTrigger.trigger()
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
