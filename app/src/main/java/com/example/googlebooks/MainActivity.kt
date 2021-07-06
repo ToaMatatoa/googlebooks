@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity(), KodeinAware {
         navController = navHostFragment.findNavController()
 
         viewModel.saveBooksSetting(Constants.CHECK_ALL)
+        viewModel.saveEnteredText("")
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -53,4 +53,12 @@ class ViewModel(private val useCase: UseCase) : ViewModel() {
     fun getBooksSetting(): String {
         return useCase.getSelectedFilter()
     }
+
+    fun saveEnteredText(text: String) {
+        useCase.saveEnteredText(text)
+    }
+
+    fun getEnteredText(): String {
+        return useCase.getEnteredText()
+    }
 }

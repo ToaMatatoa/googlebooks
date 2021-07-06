@@ -29,6 +29,7 @@
     <dimen name="margin_size_32">32dp</dimen>
     <dimen name="margin_size_48">48dp</dimen>
     <dimen name="margin_size_64">64dp</dimen>
+    <dimen name="margin_size_164">164dp</dimen>
 
     <dimen name="text_size_18">18sp</dimen>
     <dimen name="text_size_20">20sp</dimen>

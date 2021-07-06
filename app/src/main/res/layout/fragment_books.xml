@@ -78,7 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margin_size_64"
-        android:layout_marginTop="@dimen/margin_size_64"
+        android:layout_marginTop="@dimen/margin_size_164"
         android:gravity="center"
         android:text="@string/Right_book_always_will_be_find"
         android:textColor="@color/light_gray"

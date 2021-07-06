@@ -16,4 +16,12 @@ class UseCase(private val repository: Repository) {
     fun getSelectedFilter(): String {
         return repository.getSelectedFilter()
     }
+
+    fun saveEnteredText(text: String) {
+        repository.saveEnteredText(text)
+    }
+
+    fun getEnteredText(): String {
+        return repository.getEnteredText()
+    }
 }

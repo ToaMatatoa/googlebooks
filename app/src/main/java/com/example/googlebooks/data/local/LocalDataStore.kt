@@ -9,4 +9,12 @@ class LocalDataStore(private val sharedPreferences: SharedPreferences) {
     fun getSelectedFilter(): String {
         return sharedPreferences.getSelectedFilter()
     }
+
+    fun saveEnteredText(text: String) {
+        sharedPreferences.saveEnteredText(text)
+    }
+
+    fun getEnteredText(): String {
+        return sharedPreferences.getEnteredText()
+    }
 }

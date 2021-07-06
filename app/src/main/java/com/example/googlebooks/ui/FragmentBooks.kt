@@ -22,7 +22,6 @@ import org.kodein.di.android.x.closestKodein
 import org.kodein.di.generic.instance
 import org.kodein.di.generic.kcontext
 
-
 class FragmentBooks : Fragment(R.layout.fragment_books), KodeinAware {
 
     override val kodeinContext = kcontext<Fragment>(this)
@@ -54,25 +53,38 @@ class FragmentBooks : Fragment(R.layout.fragment_books), KodeinAware {
 
         bookAdapter = BookAdapter()
 
-        binding.imgMenu.setOnClickListener {
-            findNavController().navigate(R.id.action_fragmentBooks_to_fragmentSettings, null)
-        }
-
         viewModel.liveDataRemoteProvider.observe(viewLifecycleOwner, Observer { books ->
             bookAdapter?.addBooks(books)
             binding.ivNoBooksPlaceholder.visibility = if (books.isNotEmpty())
                 INVISIBLE else VISIBLE
+            if (binding.etSearch.text.isEmpty())
+                bookAdapter?.addBooks(emptyList())
         })
+
+        viewModel.getBooks(viewModel.getEnteredText())
+
+        binding.imgMenu.setOnClickListener {
+            findNavController().navigate(R.id.action_fragmentBooks_to_fragmentSettings, null)
+        }
 
         binding.rvList.apply {
             layoutManager = LinearLayoutManager(context)
             binding.rvList.adapter = bookAdapter
         }
 
+        binding.etSearch.setText(viewModel.getEnteredText())
+
         binding.etSearch.doOnTextChanged { text, _, _, _ ->
             viewModel.getBooks(text.toString())
+            viewModel.saveEnteredText(text.toString())
             binding.imgClose.visibility = if (text!!.isNotEmpty())
                 VISIBLE else INVISIBLE
+        }
+
+        binding.etSearch.setOnFocusChangeListener { view, _ ->
+            if (view.isFocused) {
+                binding.etSearch.setHintTextColor(resources.getColor(R.color.light_gray))
+            } else binding.etSearch.setHintTextColor(resources.getColor(R.color.white))
         }
 
         binding.imgClose.setOnClickListener {

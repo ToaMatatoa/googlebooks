@@ -21,4 +21,12 @@ class Repository(
     fun getSelectedFilter(): String {
         return localDataStore.getSelectedFilter()
     }
+
+    fun saveEnteredText(text: String) {
+        localDataStore.saveEnteredText(text)
+    }
+
+    fun getEnteredText(): String {
+        return localDataStore.getEnteredText()
+    }
 }
