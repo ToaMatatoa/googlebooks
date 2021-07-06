@@ -14,7 +14,6 @@ import org.kodein.di.android.closestKodein
 import org.kodein.di.android.retainedKodein
 import org.kodein.di.generic.instance
 
-
 class MainActivity : AppCompatActivity(), KodeinAware {
 
     private lateinit var navController: NavController

@@ -81,8 +81,8 @@ class FragmentBooks : Fragment(R.layout.fragment_books), KodeinAware {
                 VISIBLE else INVISIBLE
         }
 
-        binding.etSearch.setOnFocusChangeListener { view, _ ->
-            if (view.isFocused) {
+        binding.etSearch.setOnFocusChangeListener { etView, _ ->
+            if (etView.isFocused) {
                 binding.etSearch.setHintTextColor(resources.getColor(R.color.light_gray))
             } else binding.etSearch.setHintTextColor(resources.getColor(R.color.white))
         }
