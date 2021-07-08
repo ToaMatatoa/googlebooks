@@ -24,8 +24,8 @@ class BookAdapter : RecyclerView.Adapter<BookAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val paymentBean: Book = items[position]
-        holder.bind(paymentBean)
+        val bookPosition: Book = items[position]
+        holder.bind(bookPosition)
     }
 
     override fun getItemCount(): Int = items.size

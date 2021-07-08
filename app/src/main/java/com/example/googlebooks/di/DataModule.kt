@@ -39,7 +39,6 @@ object DataModule {
             )
         }
 
-
         //UseCase
         bind<UseCase>() with singleton {
             UseCase(
